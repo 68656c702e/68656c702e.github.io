@@ -7,10 +7,36 @@
             color:rgb(39, 39, 39);
             font-family: "Consolas";
         }
+        #flicker{
+            display: inline-block;
+            -webkit-transform:scale(1,1.5);
+            -moz-transform:scale(1,1.5);
+            -ms-transform:scale(1,1.5);
+            -o-transform:scale(1,1.5);
+            transform:scale(1,1.5);
+        }
     </style>
     <body>
         <p1>
-            ~/chrome/femboy.tk:443$ █
+            ~/chrome/femboy.tk:443$ 
         </p1>
+        <p1 id="flicker">▮</p1>
     </body>
+    <script id="dest">
+        const flickerText = document.getElementById("flicker").innerText;
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        async function flicker() {
+            while(true){
+                document.getElementById("flicker").innerText = "▯";
+                await sleep(1000);
+                document.getElementById("flicker").innerText = flickerText;
+                await sleep(1000);
+            }
+        }
+        flicker();
+        document.getElementById("dest").remove();
+    </script>
 </html>
