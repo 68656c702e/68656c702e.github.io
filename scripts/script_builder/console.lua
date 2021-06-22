@@ -20,7 +20,7 @@ local Player = getfenv(0).owner or Players:GetPlayerFromCharacter(script.Parent)
 
 local Console = InstanceHandler.Instances:CreatePart(script, Color3.fromRGB(25, 25, 25), Vector3.new(10,5,0), true)
 local ConsoleUI = InstanceHandler.Instances:CreateSurfaceGUI(Console, nil, nil, "Back")
-local ConsoleText = InstanceHandler.Instances:CreateTextBox(ConsoleUI, nil, "Code", nil, 14, false, true, 0, true, "Left", "Top", 1)
+local ConsoleText = InstanceHandler.Instances:CreateTextBox(ConsoleUI, nil, "Code", nil, 25, false, true, 0, true, "Left", "Top", 1)
 
 ConsoleText.Text = "abc1234"
 ConsoleText.TextEditable = false

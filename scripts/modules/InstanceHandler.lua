@@ -16,7 +16,7 @@ function module.Instances:CreateSurfaceGUI(Adornee, PixelsPerStud, LightInfluenc
     local SurfaceGUI = Instance.new("SurfaceGui", Adornee)
     SurfaceGUI.Adornee = Adornee
     SurfaceGUI.LightInfluence = LightInfluence or 0
-    SurfaceGUI.PixelsPerStud = PixelsPerStud or 1000
+    SurfaceGUI.PixelsPerStud = PixelsPerStud or 10000
     SurfaceGUI.Face = Face or "Front"
 
     return SurfaceGUI
