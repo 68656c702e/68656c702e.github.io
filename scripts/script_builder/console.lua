@@ -20,10 +20,12 @@ local Player = getfenv(0).owner or Players:GetPlayerFromCharacter(script.Parent)
 
 local Console = InstanceHandler.Instances:CreatePart(script, Color3.fromRGB(25, 25, 25), Vector3.new(10,5,0), true)
 local ConsoleUI = InstanceHandler.Instances:CreateSurfaceGUI(Console, nil, nil, "Back")
-local ConsoleText = InstanceHandler.Instances:CreateTextBox(ConsoleUI, nil, "Code", nil, 25, false, true, 0, true, "Left", "Top", 1)
+local ConsoleText = InstanceHandler.Instances:CreateTextBox(ConsoleUI, nil, "Code", Udim2.new(0.95,0,0.95,0), 24, false, true, 0, true, "Left", "Top", 1)
 
 ConsoleText.Text = "abc1234"
 ConsoleText.TextEditable = false
+ConsoleText.AnchorPoint = Vector2.new(0.5,0.5)
+ConsoleText.Position = Udim2.new(0.5,0,0.5,0)
 
 game:GetService("RunService").Heartbeat:Connect(function()
     local Movement = CFrame.Angles(math.rad(3*math.cos(tick()/12)),math.rad(3*math.cos(tick()/12)),math.rad(4*math.cos(tick()/12)))
