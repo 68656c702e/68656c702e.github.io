@@ -15,7 +15,15 @@ end
 local InstanceHandler = require("InstanceHandler")
 
 local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
 local Player = getfenv(0).owner or Players:GetPlayerFromCharacter(script.Parent)
 
-local ConsoleUI = InstanceHandler.Instances:CreatePart(script, Color3.fromRGB(25, 25, 25), Vector3.new(10,5,0), true)
-ConsoleUI.Position = Player.Character.HumanoidRootPart.Position
+local Console = InstanceHandler.Instances:CreatePart(script, Color3.fromRGB(25, 25, 25), Vector3.new(10,5,0), true)
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    if not pcall(function()
+        Console.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.new(Console.Size.X/2,0,5)
+    end) then
+        Console.CFrame = CFrame.new(0,0,0)
+    end
+end)
