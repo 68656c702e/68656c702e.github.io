@@ -7,7 +7,7 @@ function module.Instances:CreatePart(Parent, Color, Size, Anchored)
     Part.Color = Color or Color3.fromRGB(0,0,0)
     Part.Size = Size or Vector3.new(4,1,2)
     Part.Anchored = Anchored or true
-    Part.Parent = Parent or script
+    Part.Parent = Parent
 
     return Part
 end
@@ -32,6 +32,7 @@ function module.Instances:CreateTextBox(Parent, Color, Font, Size, TextSize, Tex
     TextBox.RichText = RichText
     TextBox.TextColor3 = Color or Color3.fromRGB(255,255,255)
     TextBox.TextWrapped = TextWrapped or true
+    TextBox.Parent = Parent
 
     return TextBox
 end
