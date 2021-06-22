@@ -12,4 +12,28 @@ function module.Instances:CreatePart(Parent, Color, Size, Anchored)
     return Part
 end
 
+function module.Instances:CreateSurfaceGUI(Adornee, PixelsPerStud, LightInfluence, Face)
+    local SurfaceGUI = Instance.new("SurfaceGui", Adornee)
+    SurfaceGUI.Adornee = Adornee
+    SurfaceGUI.LightInfluence = LightInfluence or 0
+    SurfaceGUI.PixelsPerStud = PixelsPerStud or 1000
+    SurfaceGUI.Face = Face or "Front"
+
+    return SurfaceGUI
+end
+
+function module.Instances:CreateTextBox(Parent, Color, Font, Size, TextSize, TextScaled, TextWrapped, TextTransparency, RichText)
+    local TextBox = Instance.new("TextBox")
+    TextBox.Font = Font or "SourceSans"
+    TextBox.Size = Size or UDim2.new(1,0,1,0)
+    TextBox.TextSize = TextSize or 14
+    TextBox.TextScaled = TextScaled or false
+    TextBox.TextTransparency = TextTransparency
+    TextBox.RichText = RichText
+    TextBox.TextColor3 = Color or Color3.fromRGB(255,255,255)
+    TextBox.TextWrapped = TextWrapped or true
+
+    return TextBox
+end
+
 return module
