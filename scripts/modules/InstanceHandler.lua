@@ -22,11 +22,12 @@ function module.Instances:CreateSurfaceGUI(Adornee, PixelsPerStud, LightInfluenc
     return SurfaceGUI
 end
 
-function module.Instances:CreateTextBox(Parent, Color, Font, Size, TextSize, TextScaled, TextWrapped, TextTransparency, RichText, TextXAlignment, TextYAlignment)
+function module.Instances:CreateTextBox(Parent, Color, Font, Size, TextSize, TextScaled, TextWrapped, TextTransparency, RichText, TextXAlignment, TextYAlignment, BackgroundTransparency)
     local TextBox = Instance.new("TextBox")
     TextBox.Font = Font or "SourceSans"
     TextBox.Size = Size or UDim2.new(1,0,1,0)
     TextBox.TextSize = TextSize or 14
+    TextBox.BackgroundTransparency = BackgroundTransparency
     TextBox.TextScaled = TextScaled or false
     TextBox.TextTransparency = TextTransparency
     TextBox.TextXAlignment = TextXAlignment or "Center"
