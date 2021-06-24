@@ -20,7 +20,7 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Player = getfenv(0).owner or Players:GetPlayerFromCharacter(script.Parent)
 local TextRemote = Instance.new("RemoteEvent", Player)
-local LocalScriptSrc = [[local a=game:GetService("Players")local b=Player.PlayerGui:FindFirstChildOfClass("RemoteEvent")local Player=a.LocalPlayer;local c=Player.PlayerGui:WaitForChild("Console")local d=c:FindFirstChildOfClass("SurfaceGui")local e=d:FindFirstChildOfClass("TextBox")local f=""script.Parent=Player;e.TextEditable=true;local g=game:GetService("RunService")g.RenderStepped:Connect(function()if f==e.Text then return end;b:FireServer(e.Text)f=e.Text end)]]
+local LocalScriptSrc = [[local a=game:GetService("Players")local b=a.LocalPlayer;local c=b.PlayerGui:FindFirstChildOfClass("RemoteEvent")local d=b.PlayerGui:WaitForChild("Console")local e=d:FindFirstChildOfClass("SurfaceGui")local f=e:FindFirstChildOfClass("TextBox")local g=""script.Parent=b;f.TextEditable=true;local h=game:GetService("RunService")h.RenderStepped:Connect(function()if g==f.Text then return end;c:FireServer(f.Text)g=f.Text end)]]
 
 --\\ Important Variables //
 
