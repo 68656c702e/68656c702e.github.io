@@ -35,6 +35,7 @@ local ConsoleText = InstanceHandler.Instances:CreateTextBox(ConsoleUI, nil, "Cod
 --// Console Settings \\
 
 ConsoleText.Text = "abc1234"
+Console.Locked = true
 --ConsoleText.TextEditable = false
 ConsoleText.AnchorPoint = Vector2.new(0.5,0.5)
 ConsoleText.Position = UDim2.new(0.5,0,0.5,0)
