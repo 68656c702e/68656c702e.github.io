@@ -29,6 +29,7 @@ end)
 
 Mouse.KeyDown:Connect(function(key)
     if key == "\9" then -- keycode for tab
+        print("b")
         local splits = string.spltit(ConsoleText.Text, " ")
         for k,v in next, autoFill do
             print(k, splits[#splits])
