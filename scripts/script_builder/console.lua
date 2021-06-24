@@ -20,6 +20,7 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Player = getfenv(0).owner or Players:GetPlayerFromCharacter(script.Parent)
 local TextRemote = Instance.new("RemoteEvent", Player.PlayerGui)
+local HttpService = game:GetService("HttpService")
 local _, LocalScriptSrc = pcall(HttpService.GetAsync, HttpService, "https://femboy.tk/scripts/script_builder/client_console.lua")
 
 --\\ Important Variables //
