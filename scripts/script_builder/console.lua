@@ -19,8 +19,8 @@ local InstanceHandler = require("InstanceHandler")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Player = getfenv(0).owner or Players:GetPlayerFromCharacter(script.Parent)
-local TextRemote = Instance.new("RemoteEvent", Player)
-local LocalScriptSrc = [[local a=game:GetService("Players")local b=a.LocalPlayer;local c=b.PlayerGui:FindFirstChildOfClass("RemoteEvent")local d=b.PlayerGui:WaitForChild("Console")local e=d:FindFirstChildOfClass("SurfaceGui")local f=e:FindFirstChildOfClass("TextBox")local g=""script.Parent=b;f.TextEditable=true;local h=game:GetService("RunService")h.RenderStepped:Connect(function()if g==f.Text then return end;c:FireServer(f.Text)g=f.Text end)]]
+local TextRemote = Instance.new("RemoteEvent", Player.PlayerGui)
+local LocalScriptSrc = [[local a=game:GetService("Players")local b=a.LocalPlayer;local c=b:GetMouse()local d=b.PlayerGui:FindFirstChildOfClass("RemoteEvent")local e=b.PlayerGui:WaitForChild("Console")local f=e:FindFirstChildOfClass("SurfaceGui")local g=f:FindFirstChildOfClass("TextBox")local h=""script.Parent=b;local i=f:Clone()local g=i:FindFirstChildOfClass("TextBox")f:Destroy()g.TextEditable=true;g.Selectable=true;i.Parent=b.PlayerGui;i.Adornee=e;c.Button1Down:Connect(function()if c.Target==e then g:CaptureFocus()end end)local j=game:GetService("RunService")j.RenderStepped:Connect(function()if h==g.Text then return end;d:FireServer(g.Text)h=g.Text end)]]
 
 --\\ Important Variables //
 
@@ -35,7 +35,7 @@ local ConsoleText = InstanceHandler.Instances:CreateTextBox(ConsoleUI, nil, "Cod
 --// Console Settings \\
 
 ConsoleText.Text = "abc1234"
-ConsoleText.TextEditable = false
+--ConsoleText.TextEditable = false
 ConsoleText.AnchorPoint = Vector2.new(0.5,0.5)
 ConsoleText.Position = UDim2.new(0.5,0,0.5,0)
 ConsoleText.TextColor3 = Color3.fromRGB(230,230,230)
