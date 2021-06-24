@@ -41,6 +41,7 @@ end)
 
 local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(function()
+    workspace.Base.Transparency = 1
     ConsoleText.Text = ConsoleText.Text:gsub("\\\n", "\\l")
     ConsoleText.Text = ConsoleText.Text:gsub("\\n", "\n")
     ConsoleText.Text = ConsoleText.Text:gsub("\\l", "\\n")
