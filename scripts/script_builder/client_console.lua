@@ -31,8 +31,8 @@ Mouse.KeyDown:Connect(function(key)
     if key == "\9" then -- keycode for tab
         local splits = string.spltit(ConsoleText.Text, " ")
         for k,v in next, autoFill do
-            if string.find(v, splits[#splits]) and v ~= splits[#splits] then
-                ConsoleText.Text = ConsoleText.Text..string.sub(v, #splits[#splits])
+            if string.find(k, splits[#splits]) and k ~= splits[#splits] then
+                ConsoleText.Text = ConsoleText.Text..string.sub(k, #splits[#splits])
                 break
             end
         end
