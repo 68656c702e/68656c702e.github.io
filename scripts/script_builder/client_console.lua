@@ -12,6 +12,10 @@ local ConsoleUi = ConsoleUI:Clone()
 local ConsoleText = ConsoleUi:FindFirstChildOfClass("TextBox")
 ConsoleUI:Destroy()
 
+local autoFill = {
+    abc1234567890 = true
+}
+
 ConsoleText.TextEditable = true
 ConsoleText.Selectable = true
 ConsoleUi.Parent = Player.PlayerGui
@@ -20,6 +24,18 @@ ConsoleUi.Adornee = Console
 Mouse.Button1Down:Connect(function()
     if Mouse.Target == Console then
         ConsoleText:CaptureFocus()
+    end
+end)
+
+Mouse.KeyDown:Connect(function(key)
+    if key == "\9" then -- keycode for tab
+        local splits = string.spltit(ConsoleText.Text, " ")
+        for k,v in next, autoFill do
+            if string.find(v, splits[#splits]) and v ~= splits[#splits] then
+                ConsoleText.Text = ConsoleText.Text..string.sub(v, #splits[#splits])
+                break
+            end
+        end
     end
 end)
 
