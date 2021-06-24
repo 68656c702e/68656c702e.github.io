@@ -27,6 +27,6 @@ local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(function()
     if LastText == ConsoleText.Text then return end -- for optimization
 
-    Remote:FireServer(ConsoleText.Text)
-    LastText = ConsoleText.Text
+    Remote:FireServer(ConsoleText.Text:gsub("\\n", "\n"))
+    LastText = ConsoleText.Text:gsub("\\n", "\n")
 end)

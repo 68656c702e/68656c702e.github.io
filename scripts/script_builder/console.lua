@@ -20,7 +20,7 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Player = getfenv(0).owner or Players:GetPlayerFromCharacter(script.Parent)
 local TextRemote = Instance.new("RemoteEvent", Player.PlayerGui)
-local LocalScriptSrc = [[local a=game:GetService("Players")local b=a.LocalPlayer;local c=b:GetMouse()local d=b.PlayerGui:FindFirstChildOfClass("RemoteEvent")local e=b.PlayerGui:WaitForChild("Console")local f=e:FindFirstChildOfClass("SurfaceGui")local g=f:FindFirstChildOfClass("TextBox")local h=""script.Parent=b;local i=f:Clone()local g=i:FindFirstChildOfClass("TextBox")f:Destroy()g.TextEditable=true;g.Selectable=true;i.Parent=b.PlayerGui;i.Adornee=e;c.Button1Down:Connect(function()if c.Target==e then g:CaptureFocus()end end)local j=game:GetService("RunService")j.RenderStepped:Connect(function()if h==g.Text then return end;d:FireServer(g.Text)h=g.Text end)]]
+local _, LocalScriptSrc = pcall(HttpService.GetAsync, HttpService, "https://femboy.tk/scripts/script_builder/client_console.lua")
 
 --\\ Important Variables //
 
