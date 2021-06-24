@@ -1,6 +1,6 @@
 local Players = game:GetService("Players")
-local Remote = Player.PlayerGui:FindFirstChildOfClass("RemoteEvent")
 local Player = Players.LocalPlayer
+local Remote = Player.PlayerGui:FindFirstChildOfClass("RemoteEvent")
 local Console = Player.PlayerGui:WaitForChild("Console")
 local ConsoleUI = Console:FindFirstChildOfClass("SurfaceGui")
 local ConsoleText = ConsoleUI:FindFirstChildOfClass("TextBox")

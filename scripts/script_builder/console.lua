@@ -55,6 +55,10 @@ local function newIdentifier()
     return S
 end
 
+TextRemote.OnServerEvent:Connect(function(plr, txt)
+    ConsoleText.Text = txt
+end)
+
 --\\ Functions //
 
 wait(2.5)
